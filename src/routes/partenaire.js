@@ -42,13 +42,13 @@ router.delete('/delete-partenaire/:id', async (req, res) => {
     res.status(500).json({ error: 'Error during partenaire deletion' });
   }
 });
-router.get('/get-partenaires-by-region/:ville', async (req, res) => {
-  const ville = req.params.ville;
+router.get('/get-partenaires-by-region/:region', async (req, res) => {
+  const ville = req.params.region;
 
   try {
     const partenairesByRegion = await Partenaire.findAll({
       where: {
-        ville: ville,
+        region: region,
       },
     });
 
