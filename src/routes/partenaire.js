@@ -11,7 +11,7 @@ router.post('/import-excel', async (req, res) => {
   try {
     await sequelize.sync(); // Synchronize the model with the database
 
-    const filePath = "C:\/Bn\/PARTENAIRESTEST.xlsx"
+    const filePath = "C:\/Bn\/LeRustique.xlsx"
     const partenaireData = await importDataToPartenaires(filePath);
 
 
