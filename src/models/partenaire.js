@@ -31,10 +31,11 @@ const Partenaire = sequelize.define('Partenaire', {
     type: DataTypes.STRING,
     allowNull: true,
   },
+ 
   site: {
     type: DataTypes.STRING,
     defaultValue: null  },
-    desc: {
+  description: {
       type: DataTypes.STRING,
       allowNull: true,
     },
