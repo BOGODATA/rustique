@@ -3,37 +3,19 @@ const { importDataToUsers } = require('../utils/excel'); // Adjust the path
 const sequelize = require('../db/cnx'); // Adjust the path
 const crypto = require('crypto'); // Node.js crypto module
 const Partenaire = require('../models/partenaire');
-const upload = multer();
-const xlsx = require('xlsx');
 
 const router = express.Router();
 
-app.post('/import-excel', upload.single('file'), async (req, res) => {
+// Endpoint for importing data from an Excel file
+router.post('/import-excel', async (req, res) => {
   try {
-    // Vérifier si le fichier a été correctement téléchargé dans la requête
-    if (!req.file) {
-      return res.status(400).json({ error: 'No file uploaded' });
-    }
+    await sequelize.sync(); // Synchronize the model with the database
 
-    // Accéder au buffer du fichier
-    const fileBuffer = req.file.buffer;
+    const filePath = "C:\/Bn\/PARTENAIRESTEST.xlsx"
+    const partenaireData = await importDataToPartenaires(filePath);
 
-    // Convertir le buffer en tableau de données Excel
-    const workbook = xlsx.read(fileBuffer, { type: 'buffer' });
 
-    // Supposons que la feuille de calcul est la première feuille du classeur
-    const sheetName = workbook.SheetNames[0];
-    const sheet = workbook.Sheets[sheetName];
-
-    // Convertir les données de la feuille Excel en tableau JavaScript
-    const excelData = xlsx.utils.sheet_to_json(sheet);
-
-    // Synchroniser le modèle avec la base de données
-    await sequelize.sync();
-
-    // Importer les données dans la base de données
-    await Partenaire.bulkCreate(excelData);
-
+    await Partenaire.bulkCreate(partenaireData);
     console.log('Data import completed.');
 
     res.status(200).json({ message: 'Import successful' });
@@ -42,8 +24,6 @@ app.post('/import-excel', upload.single('file'), async (req, res) => {
     res.status(500).json({ error: 'Error during import' });
   }
 });
-
-
 router.delete('/delete-partenaire/:id', async (req, res) => {
   const partenaireId = req.params.id;
 
