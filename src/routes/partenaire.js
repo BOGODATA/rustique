@@ -43,7 +43,7 @@ router.delete('/delete-partenaire/:id', async (req, res) => {
   }
 });
 router.get('/get-partenaires-by-region/:region', async (req, res) => {
-  const ville = req.params.region;
+  const region = req.params.region;
 
   try {
     const partenairesByRegion = await Partenaire.findAll({
