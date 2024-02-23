@@ -1,12 +1,14 @@
 const { Sequelize } = require('sequelize');
 
-// Remplacez les valeurs de connexion appropriées
-const sequelize = new Sequelize('le_rustique', 'root', '', {
-  host: 'localhost',
+const sequelize = new Sequelize('rustique', 'rustique', 'Bogo150915', {
+  host: 'fe46787-001.eu.clouddb.ovh.net',
+  port: 35385,
   dialect: 'mysql',
+  dialectOptions: {
+    connectTimeout: 60000, 
+  },
 });
 
-// Testez la connexion à la base de données
 sequelize
   .authenticate()
   .then(() => {
