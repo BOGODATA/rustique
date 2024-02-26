@@ -146,7 +146,8 @@ async function generatePDF(participation, user, partenaire) {
       }
       .cot-5{
         font-size:6px;
-        margin:0;
+        position :relative;
+        left:5px
         position:relative;
       }
       .cot-5 .rouge{
@@ -328,9 +329,9 @@ router.post('/add-participation', async (req, res) => {
         <p>Bonjour ${user.prenom},</p>
     
         <p>Félicitations !</p>
-        <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité Yoga nature en ligne. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous :<p>
+        <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité Yoga nature en ligne. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous en entrant ces codes :<p>
       <div class="centrer">
-      <a href="https://www.bogostudio.fr" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
+      <a href="https://www.bogostudio.fr" class="button">Bogo Studio</a>
       <p>wiTDWzFXPQ: YOGA DU DOS</p>
       <p>	xahk8dFiUa: YOGA CARDIO</p>
       <p>XNm3KDm99W: YOGA RENFORCEMENT MUSCULAIRE</p>
