@@ -143,7 +143,7 @@ async function generatePDF(participation, user, partenaire) {
 
       }
       .cot-5{
-        font-size:7.5px;
+        font-size:6.5px;
         margin:0;
         position:relative;
       }
