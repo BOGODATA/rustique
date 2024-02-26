@@ -19,7 +19,7 @@ const router = express.Router();
 dotenv.config();
 const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
 const emailPassword = "Bogo150915";
-const transporter = nodemailer.createTransport("SMTP",{
+const transporter = nodemailer.createTransport({
   service: "hotmail",
 
   host: "smtp-mail.outlook.com", 
