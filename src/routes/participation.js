@@ -17,8 +17,8 @@ const { promisify } = require('util');
 const imageToBase64 = require('image-to-base64');
 const router = express.Router();
 dotenv.config();
-const emailSender = "bogopluss55@gmail.com";
-const emailPassword = "uqsg yytq plgt skoy";
+const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
+const emailPassword = "Bogo150915";
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -30,7 +30,7 @@ async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, use
 
 
   await transporter.sendMail({
-    from: "bogopluss55@gmail.com",
+    from: "nepasrepondre@lerustique-unepartdenature.fr",
     to: to,
     subject: subject,
     html: `
@@ -266,7 +266,7 @@ router.post('/add-participation', async (req, res) => {
       const emailContent = `Merci pour votre participation! Votre nouveau code est : ${code.code}.`;
 
       await transporter.sendMail({
-        from: "bogopluss55@gmail.com",
+        from: "nepasrepondre@lerustique-unepartdenature.fr",
         to: user.email,
         subject: 'Participation Confirmation',
         text: emailContent,
