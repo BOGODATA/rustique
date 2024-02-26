@@ -88,71 +88,7 @@ async function generatePDF(participation, user, partenaire) {
     const htmlContent = `
     <html>
   <head>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .logo {
-        text-align: center;
-      }
-      .logo img {
-        width: 450px;
-      }
-      .cot-1 {
-        position:relative;
-        left:130vw;
-        margin-top:20px;
-        display: flex;
-        flex-direction:row;
-        margin-rigth:20px;
-        width:100px;
-        font-size:25px;
-      }
-      
-      .pass,
-      .user {
-        font-size:20px
-        flex: 1;
-        width: 50%;
-        display: inline-block;
-        background-color: #ECECEA;
-      }
-      .cot-2{
-        position:relative;
-        left:30vw;
-        margin-left:50px;
-        font-size:20px;
-      }
-      .cot-3{
-        position:relative;
-        padding:5px;
-        left:40vw;
-        font-size:25px;
-        margin-left:70px;
-        padding-left:60px;
-        background-color:#ECECEA;
-        width:700px;
-        
-
-      }
-      .cot-4{
-        position:relative;
-        left:30px;
-        text-align:center;
-        font-size:20px;
-
-      }
-      .cot-5{
-        font-size:14px;
-        position:relative;
-        left:27vw;
-      }
-      .cot-5 .rouge{
-        color:red;
-
-      }
-     
-    </style>
+    
   </head>
   <body>
     <div class="logo">
