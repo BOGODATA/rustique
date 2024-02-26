@@ -343,6 +343,7 @@ router.post('/add-participation', async (req, res) => {
     </html>
         `,      });
     }
+
     else {
       const participation = await Participation.create({
         userId: user.id,
