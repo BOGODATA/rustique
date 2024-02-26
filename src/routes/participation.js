@@ -17,19 +17,13 @@ const { promisify } = require('util');
 const imageToBase64 = require('image-to-base64');
 const router = express.Router();
 dotenv.config();
-const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
-const emailPassword = "Bogo150915";
+// const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
+// const emailPassword = "Bogo150915";
 const transporter = nodemailer.createTransport({
-  host: 'smtp-mail.outlook.com',                  // hostname
-  service: 'outlook',                             // service name
-  secureConnection: false,
-  tls: {
-      ciphers: 'SSLv3'                            // tls version
-  },
-  port: 587,                                      // port
+  service: 'hotmail',                             // service name
   auth: {
       user: "nepasrepondre@lerustique-unepartdenature.fr",
-      pass: "Bogo150915"
+      pass: "rustique123"
   }
 });
 
