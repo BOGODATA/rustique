@@ -250,31 +250,7 @@ router.post('/add-participation', async (req, res) => {
 
     let participation;
 
-    if (partenaire.type === "Activité guidée dans la nature") {
-      const code = await Code.findOne();
-      await Code.destroy({
-        where: {
-          id: code.id,
-        }
-      });
-      participation = await Participation.create({
-        userId: user.id,
-        partenaireId: partenaireId,
-        date: new Date(),
-        code: code.code
-      });
-
-      const emailContent = `Merci pour votre participation! Votre nouveau code est : ${code.code}.`;
-
-      await transporter.sendMail({
-        from: "noreply@bogoplus.fr",
-        to: user.email,
-        subject: 'Participation Confirmation',
-        text: emailContent,
-      });
-    }
-
-   else if (partenaire.type === "Jardinage") {
+    if (partenaire.type === "Jardinage") {
       participation = await Participation.create({
         userId: user.id,
         partenaireId: partenaireId,
@@ -312,6 +288,53 @@ router.post('/add-participation', async (req, res) => {
       <a href="http://54.38.32.61:7000/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
       <a href="http://54.38.32.61:7000/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
       <a href="http://54.38.32.61:7000/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
+        </div>
+        <p>Amusez-vous bien !</p>
+        <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
+      </body>
+    </html>
+        `,      });
+    }
+   else if (partenaire.type === "Yoga nature en ligne") {
+      participation = await Participation.create({
+        userId: user.id,
+        partenaireId: partenaireId,
+        date: new Date(),
+      });
+
+
+      // Envoyer le mail
+      await transporter.sendMail({
+        from: "noreply@bogoplus.fr",
+        to: user.email,
+        subject: 'Confirmation de votre PASS activité',
+        html: `
+        <html>
+      <head>
+        <style>
+        .centrer {
+          text-align: center;
+          margin: 0 auto;
+        }
+        
+          .info{
+            color: #9FA0A7;
+            font-size:12px;
+          }
+    
+        </style>
+      </head>
+      <body>
+        <p>Bonjour ${user.prenom},</p>
+    
+        <p>Félicitations !</p>
+        <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité Yoga nature en ligne. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous :<p>
+      <div class="centrer">
+      <a href="https://www.bogostudio.fr" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
+      <p>wiTDWzFXPQ: YOGA DU DOS</p>
+      <p>	xahk8dFiUa: YOGA CARDIO</p>
+      <p>XNm3KDm99W: YOGA RENFORCEMENT MUSCULAIRE</p>
+      
         </div>
         <p>Amusez-vous bien !</p>
         <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
