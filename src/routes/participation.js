@@ -197,7 +197,8 @@ async function generatePDF(participation, user, partenaire) {
 </html>
     `;
     const pdfOptions = {
-      format: 'A4',
+      format: 'Letter',
+      zoomFactor: 0.75,
       base: './assets',
       childProcessOptions: {
         env: {
