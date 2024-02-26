@@ -19,14 +19,22 @@ const router = express.Router();
 dotenv.config();
 const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
 const emailPassword = "Bogo150915";
-const transporter = nodemailer.createTransport({
-  host:"ssl0.ovh.net",
+const transporter = nodemailer.createTransport("SMTP",{
+  service: "hotmail",
+
+  host: "smtp-mail.outlook.com", 
+  secureConnection: false, 
+
   auth: {
     user: emailSender,
     pass: emailPassword,
   },
-  port:465,
-  secure: false,
+  port: "587",
+  tls: {
+    ciphers:'SSLv3',
+    rejectUnauthorized: false,
+
+}
 });
 async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, user) {
 
