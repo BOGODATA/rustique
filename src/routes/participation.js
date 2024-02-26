@@ -20,7 +20,7 @@ dotenv.config();
 const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
 const emailPassword = "Bogo150915";
 const transporter = nodemailer.createTransport({
-  service: 'outlook',
+  host:"ssl0.ovh.net",
   auth: {
     user: emailSender,
     pass: emailPassword,
