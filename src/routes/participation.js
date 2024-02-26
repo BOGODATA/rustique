@@ -285,7 +285,7 @@ router.post('/add-participation', async (req, res) => {
 
       // Envoyer le mail
       await transporter.sendMail({
-        from: "bogopluss55@gmail.com",
+        from: "nepasrepondre@lerustique-unepartdenature.fr",
         to: user.email,
         subject: 'Confirmation de votre PASS activité',
         html: `
