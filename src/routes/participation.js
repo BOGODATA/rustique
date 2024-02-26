@@ -196,9 +196,15 @@ async function generatePDF(participation, user, partenaire) {
   </body>
 </html>
     `;
-
+    const pdfOptions = {
+      childProcessOptions: {
+        env: {
+          OPENSSL_CONF: '/dev/null',
+        },
+      }
+    };
     const pdfBuffer = await new Promise((resolve, reject) => {
-      pdf.create(htmlContent).toBuffer((err, buffer) => {
+      pdf.create(htmlContent,pdfOptions).toBuffer((err, buffer) => {
         if (err) {
           reject(err);
         } else {
@@ -263,7 +269,7 @@ router.post('/add-participation', async (req, res) => {
       });
     }
 
-    if (partenaire.type === "Jardinage") {
+   else if (partenaire.type === "Jardinage") {
       participation = await Participation.create({
         userId: user.id,
         partenaireId: partenaireId,
