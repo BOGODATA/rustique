@@ -71,7 +71,7 @@ async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, use
        Code postal : ${partenaire.cp}<br>
        Ville : ${partenaire.ville}<br>
        Site internet : <a href="${partenaire.site}">${partenaire.site} </a><br>
-       Détails : ${partenaire.desc}<br>
+       Détails : ${partenaire.description}<br>
     </p>
     <a href="${pdfFileName}" class="button">TÉLÉCHARGER MON PASS</a>
     </div>
@@ -126,7 +126,7 @@ async function generatePDF(participation, user, partenaire) {
       .cot-3{
         position:relative;
         padding:5px;
-        left:15vw;
+        left:20vw;
         font-size:10px;
         margin-left:10px;
         padding-left:20px;
