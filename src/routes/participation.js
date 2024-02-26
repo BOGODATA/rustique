@@ -20,22 +20,19 @@ dotenv.config();
 const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
 const emailPassword = "Bogo150915";
 const transporter = nodemailer.createTransport({
-  service: "hotmail",
-
-  host: "smtp-mail.outlook.com", 
-  secureConnection: false, 
-
-  auth: {
-    user: emailSender,
-    pass: emailPassword,
-  },
-  port: "587",
+  host: 'smtp-mail.outlook.com',                  // hostname
+  service: 'outlook',                             // service name
+  secureConnection: false,
   tls: {
-    ciphers:'SSLv3',
-    rejectUnauthorized: false,
-
-}
+      ciphers: 'SSLv3'                            // tls version
+  },
+  port: 587,                                      // port
+  auth: {
+      user: "nepasrepondre@lerustique-unepartdenature.fr",
+      pass: "Bogo150915"
+  }
 });
+
 async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, user) {
 
 
