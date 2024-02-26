@@ -105,7 +105,7 @@ async function generatePDF(participation, user, partenaire) {
         display: flex;
         flex-direction:row;
         margin-rigth:20px;
-        width:100px;
+        width:30%;
         font-size:12px;
       }
       
@@ -126,8 +126,8 @@ async function generatePDF(participation, user, partenaire) {
       .cot-3{
         position:relative;
         padding:5px;
-        left:20vw;
-        font-size:10px;
+        left:25vw;
+        font-size:9px;
         margin-left:10px;
         padding-left:20px;
         background-color:#ECECEA;
@@ -143,7 +143,7 @@ async function generatePDF(participation, user, partenaire) {
 
       }
       .cot-5{
-        font-size:7px;
+        font-size:6px;
         position:relative;
         left:3vw;
       }
