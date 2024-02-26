@@ -298,9 +298,9 @@ router.post('/add-participation', async (req, res) => {
         <p>Félicitations !</p>
         <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité JARDINAGE. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous afin de télécharger vos trois fiches Jardinot :</p>
       <div class="centrer">
-      <a href="http://localhost:7000/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
-      <a href="http://localhost:7000/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
-      <a href="http://localhost:7000/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
+      <a href="http://54.38.32.61:7000/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
+      <a href="http://54.38.32.61:7000/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
+      <a href="http://54.38.32.61:7000/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
         </div>
         <p>Amusez-vous bien !</p>
         <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
@@ -315,7 +315,7 @@ router.post('/add-participation', async (req, res) => {
         date: new Date(), 
       });
 
-      const pdfFileName = `http://localhost:7000/${user.prenom}_${user.nom}_${user.id}_${partenaire.nom}.pdf`;
+      const pdfFileName = `http://54.38.32.61:7000/${user.prenom}_${user.nom}_${user.id}_${partenaire.nom}.pdf`;
       await generatePDF(participation, user, partenaire, pdfFileName);
       await sendEmailWithAttachment(user.email, 'Participation Confirmation', pdfFileName, partenaire, user);
 
