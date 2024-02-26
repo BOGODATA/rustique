@@ -20,11 +20,13 @@ dotenv.config();
 const emailSender = "nepasrepondre@lerustique-unepartdenature.fr";
 const emailPassword = "Bogo150915";
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'outlook',
   auth: {
     user: emailSender,
     pass: emailPassword,
   },
+  port:465,
+  secure: false,
 });
 async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, user) {
 
