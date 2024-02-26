@@ -212,7 +212,7 @@ async function generatePDF(participation, user, partenaire) {
         }
       });
     });
-    const fileName = `${user.prenom}_${user.nom}_${user.id}_${partenaire.nom}.pdf`;
+    const fileName = `${user.prenom}_${user.nom}_${user.id}.pdf`;
     const filePath = path.join(__dirname, '../../public/', fileName);
 
     // Écrire le fichier PDF sur le disque
@@ -321,7 +321,7 @@ router.post('/add-participation', async (req, res) => {
         date: new Date(), 
       });
 
-      const pdfFileName = `http://54.38.32.61:7000/${user.prenom}_${user.nom}_${user.id}_${partenaire.nom}.pdf`;
+      const pdfFileName = `http://54.38.32.61:7000/${user.prenom}_${user.nom}_${user.id}.pdf`;
       await generatePDF(participation, user, partenaire, pdfFileName);
       await sendEmailWithAttachment(user.email, 'Participation Confirmation', pdfFileName, partenaire, user);
 
