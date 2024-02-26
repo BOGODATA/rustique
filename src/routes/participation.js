@@ -107,6 +107,7 @@ async function generatePDF(participation, user, partenaire) {
         margin-rigth:20px;
         width:10%;
         font-size:12px;
+        padding:5px;
       }
       
       .pass,
