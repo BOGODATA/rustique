@@ -22,8 +22,8 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
   service: 'hotmail',                             // service name
   auth: {
-      user: "nepasrepondre@lerustique-unepartdenature.fr",
-      pass: "rustique123"
+      user: "noreply@bogoplus.fr",
+      pass: "Vat36926"
   }
 });
 
@@ -31,7 +31,7 @@ async function sendEmailWithAttachment(to, subject, pdfFileName, partenaire, use
 
 
   await transporter.sendMail({
-    from: "nepasrepondre@lerustique-unepartdenature.fr",
+    from: "noreply@bogoplus.fr",
     to: to,
     subject: subject,
     html: `
@@ -267,7 +267,7 @@ router.post('/add-participation', async (req, res) => {
       const emailContent = `Merci pour votre participation! Votre nouveau code est : ${code.code}.`;
 
       await transporter.sendMail({
-        from: "nepasrepondre@lerustique-unepartdenature.fr",
+        from: "noreply@bogoplus.fr",
         to: user.email,
         subject: 'Participation Confirmation',
         text: emailContent,
@@ -284,7 +284,7 @@ router.post('/add-participation', async (req, res) => {
 
       // Envoyer le mail
       await transporter.sendMail({
-        from: "nepasrepondre@lerustique-unepartdenature.fr",
+        from: "noreply@bogoplus.fr",
         to: user.email,
         subject: 'Confirmation de votre PASS activité',
         html: `
