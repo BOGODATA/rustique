@@ -126,8 +126,8 @@ async function generatePDF(participation, user, partenaire) {
       .cot-3{
         position:relative;
         padding:5px;
-        left:10vw;
-        font-size:8px;
+        left:15vw;
+        font-size:10px;
         margin-left:10px;
         padding-left:20px;
         background-color:#ECECEA;
@@ -139,13 +139,13 @@ async function generatePDF(participation, user, partenaire) {
         position:relative;
         left:5px;
         text-align:center;
-        font-size:6px;
+        font-size:8px;
 
       }
       .cot-5{
-        font-size:6px;
+        font-size:7px;
         position:relative;
-        left:2vw;
+        left:3vw;
       }
       .cot-5 .rouge{
         color:red;
@@ -181,7 +181,7 @@ async function generatePDF(participation, user, partenaire) {
   <p>${partenaire.ville}</p>
   <p>${partenaire.mail}</p>
   <p>${partenaire.site}</p>
-  <p>${partenaire.desc}</p>
+  <p>${partenaire.description}</p>
   </div>
   <span class="cot-4"> 
   <p><b>Ce pass est nominatif et unique, en aucun cas il ne pourra être réémis (perte, vol…).<br>
