@@ -196,10 +196,17 @@ async function generatePDF(participation, user, partenaire) {
   </body>
 </html>
     `;
-    const options = { format: 'A4', base: './assets' }
-
+    const pdfOptions = {
+      format: 'A4',
+      base: './assets',
+      childProcessOptions: {
+        env: {
+          OPENSSL_CONF: '/dev/null',
+        },
+      }
+    };
     const pdfBuffer = await new Promise((resolve, reject) => {
-      pdf.create(htmlContent,options).toBuffer((err, buffer) => {
+      pdf.create(htmlContent,pdfOptions).toBuffer((err, buffer) => {
         if (err) {
           reject(err);
         } else {
