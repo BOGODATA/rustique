@@ -116,7 +116,9 @@ async function generatePDF(participation, user, partenaire) {
         width: 50%;
         display: inline-block;
         background-color: #ECECEA;
-        margin:10px;
+        p{
+          margin-right:10px;
+        }
       }
       .cot-2{
         position:relative;
