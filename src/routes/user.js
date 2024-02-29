@@ -99,10 +99,10 @@ router.put('/update-etat/:id', async (req, res) => {
       <p>Bonjour ${user.prenom},</p>
   
       <p>Félicitations !</p>
-      <p>Votre participation a été validée ci-dessous le lien ainsi le code pour choisir votre activités</p>
+      <p>Votre participation a été confirmée. Vous trouverez ci-dessous le lien ainsi que le code pour sélectionner vos activités.</p>
     <div class="centrer">
     <a href="https://lerustique-unepartdenature.fr" class="button">https://lerustique-unepartdenature.fr</a>
-    <p>code d'acces : ${validationCode}</p>
+    <p>code d'accès : ${validationCode}</p>
       </div>
       <p>Amusez-vous bien !</p>
       <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>

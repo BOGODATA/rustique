@@ -257,6 +257,11 @@ router.post('/add-participation', async (req, res) => {
         partenaireId: partenaireId,
         date: new Date(),
       });
+      await User.update({ code: null }, {
+        where: {
+          id: user.id
+        }
+      });
 
 
       // Envoyer le mail
@@ -302,7 +307,11 @@ router.post('/add-participation', async (req, res) => {
         partenaireId: partenaireId,
         date: new Date(),
       });
-
+      await User.update({ code: null }, {
+        where: {
+          id: user.id
+        }
+      });
 
       // Envoyer le mail
       await transporter.sendMail({
@@ -350,7 +359,11 @@ router.post('/add-participation', async (req, res) => {
         partenaireId: partenaireId,
         date: new Date(), 
       });
-
+      await User.update({ code: null }, {
+        where: {
+          id: user.id
+        }
+      });
       const pdfFileName = `https://api.lerustique-unepartdenature.fr/${user.prenom}_${user.nom}_${user.id}.pdf`;
       await generatePDF(participation, user, partenaire, pdfFileName);
       await sendEmailWithAttachment(user.email, 'Participation Confirmation', pdfFileName, partenaire, user);
