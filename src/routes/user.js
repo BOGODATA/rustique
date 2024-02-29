@@ -4,6 +4,8 @@ const User = require('../models/user'); // Adjust the path
 const sequelize = require('../db/cnx'); // Adjust the path
 const crypto = require('crypto'); // Node.js crypto module
 const multer = require('multer');
+const nodemailer = require('nodemailer');
+
 const upload = multer({ dest: 'uploads/' });
 const router = express.Router();
 const transporter = nodemailer.createTransport({
