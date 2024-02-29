@@ -99,7 +99,7 @@ router.put('/update-etat/:id', async (req, res) => {
       <p>Bonjour ${user.prenom},</p>
   
       <p>Félicitations !</p>
-      <p>Votre participation a été confirmée. Une fois que vous effectuez une participation, votre code ne sera plus valide, car il peut être utilisé qu'une seule fois. Vous trouverez ci-dessous le lien ainsi que le code pour sélectionner vos activités</p>
+      <p>Votre participation a été validée. Vous trouverez ci-dessous votre code unique ainsi que le lien pour accéder au site des partenaires de l’opération LE RUSTIQUE. Attention, votre code n’est valable qu’une seule fois.</p>
     <div class="centrer">
     <a href="https://lerustique-unepartdenature.fr" class="button">https://lerustique-unepartdenature.fr</a>
     <p>code d'accès : ${validationCode}</p>
