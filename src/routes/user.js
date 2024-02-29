@@ -6,6 +6,13 @@ const crypto = require('crypto'); // Node.js crypto module
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 const router = express.Router();
+const transporter = nodemailer.createTransport({
+  service: 'hotmail',                             // service name
+  auth: {
+      user: "noreply@bogoplus.fr",
+      pass: "Vat36926"
+  }
+});
 
 
 router.get('/get-all-users', async (req, res) => {
@@ -69,7 +76,7 @@ router.put('/update-etat/:id', async (req, res) => {
     await transporter.sendMail({
       from: "noreply@bogoplus.fr",
       to: user.email,
-      subject: 'Confirmation de votre PASS activité',
+      subject: 'Validation de votre Participation',
       html: `
       <html>
     <head>
@@ -90,11 +97,10 @@ router.put('/update-etat/:id', async (req, res) => {
       <p>Bonjour ${user.prenom},</p>
   
       <p>Félicitations !</p>
-      <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité JARDINAGE. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous afin de télécharger vos trois fiches Jardinot :</p>
+      <p>Votre participation a été validée ci-dessous le lien ainsi le code pour choisir votre activités</p>
     <div class="centrer">
-    <a href="http://54.38.32.61:7000/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
-    <a href="http://54.38.32.61:7000/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
-    <a href="http://54.38.32.61:7000/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
+    <a href="https://lerustique-unepartdenature.fr" class="button">Le Rustique</a>
+    <p>code d'acces : ${validationCode}</p>
       </div>
       <p>Amusez-vous bien !</p>
       <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
