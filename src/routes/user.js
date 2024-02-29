@@ -66,7 +66,41 @@ router.put('/update-etat/:id', async (req, res) => {
     // You can skip the loop since the code is generated randomly
     user.code = validationCode;
     await user.save();
-
+    await transporter.sendMail({
+      from: "noreply@bogoplus.fr",
+      to: user.email,
+      subject: 'Confirmation de votre PASS activité',
+      html: `
+      <html>
+    <head>
+      <style>
+      .centrer {
+        text-align: center;
+        margin: 0 auto;
+      }
+      
+        .info{
+          color: #9FA0A7;
+          font-size:12px;
+        }
+  
+      </style>
+    </head>
+    <body>
+      <p>Bonjour ${user.prenom},</p>
+  
+      <p>Félicitations !</p>
+      <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité JARDINAGE. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous afin de télécharger vos trois fiches Jardinot :</p>
+    <div class="centrer">
+    <a href="http://54.38.32.61:7000/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
+    <a href="http://54.38.32.61:7000/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
+    <a href="http://54.38.32.61:7000/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
+      </div>
+      <p>Amusez-vous bien !</p>
+      <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
+    </body>
+  </html>
+      `,      });
     res.status(200).json({ message: 'Etat updated successfully', validationCode });
   } catch (error) {
     console.error('Error during etat update:', error);
