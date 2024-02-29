@@ -101,7 +101,7 @@ router.put('/update-etat/:id', async (req, res) => {
       <p>Félicitations !</p>
       <p>Votre participation a été validée ci-dessous le lien ainsi le code pour choisir votre activités</p>
     <div class="centrer">
-    <a href="https://lerustique-unepartdenature.fr" class="button">Le Rustique</a>
+    <a href="https://lerustique-unepartdenature.fr" class="button">https://lerustique-unepartdenature.fr</a>
     <p>code d'acces : ${validationCode}</p>
       </div>
       <p>Amusez-vous bien !</p>
