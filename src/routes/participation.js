@@ -291,9 +291,9 @@ router.post('/add-participation', async (req, res) => {
         <p>Félicitations !</p>
         <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité JARDINAGE. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous afin de télécharger vos trois fiches Jardinot :</p>
       <div class="centrer">
-      <a href="https://api.lerustique-unepartdenature.fr/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a>
-      <a href="https://api.lerustique-unepartdenature.fr/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a>
-      <a href="https://api.lerustique-unepartdenature.fr/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a>
+      <a href="https://api.lerustique-unepartdenature.fr/jardinage/Lecompostage.pdf" class="button">CONSEILS JARDIN : LE COMPOSTAGE</a><br>
+      <a href="https://api.lerustique-unepartdenature.fr/jardinage/LePaillage.pdf" class="button">CONSEILS JARDIN : LE PAILLAGE</a><br>
+      <a href="https://api.lerustique-unepartdenature.fr/jardinage/Bonnesgrainesbonssemis.pdf" class="button">CONSEILS JARDIN : BONNES GRAINES BONS SEMIS</a><br>
         </div>
         <p>Amusez-vous bien !</p>
         <p class="info">Les sociétés organisatrices ne sauraient être tenues pour responsable en cas d’un éventuel accident survenu lors de l’utilisation du pass. Conformément au Règlement Général sur la Protection des Données à caractère personnel, les Participants ont un droit d’accès, de rectification, de suppression ou d’opposition pour motifs légitimes. Les Participants pourront exercer leurs droits par email à contact@lerustique-unepartdenature.fr</p>
@@ -341,9 +341,9 @@ router.post('/add-participation', async (req, res) => {
         <p>Vous avez participé à l’opération LE RUSTIQUE et vous avez sélectionné l’activité Yoga nature en ligne. Pour en bénéficier, veuillez cliquer sur le lien ci-dessous en entrant ces codes :<p>
       <div class="centrer">
       <a href="https://www.bogostudio.fr" class="button">Bogo Studio</a>
-      <p>wiTDWzFXPQ: YOGA DU DOS</p>
-      <p>	xahk8dFiUa: YOGA CARDIO</p>
-      <p>XNm3KDm99W: YOGA RENFORCEMENT MUSCULAIRE</p>
+      <p>dujc5PnDKd : YOGA DU DOS</p>
+      <p>bkvvH7BAEM : YOGA CARDIO</p>
+      <p>3TrmeqJ4By : YOGA RENFORCEMENT MUSCULAIRE</p>
       
         </div>
         <p>Amusez-vous bien !</p>
