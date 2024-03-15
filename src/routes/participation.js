@@ -140,6 +140,7 @@ async function generatePDF(participation, user, partenaire) {
       .cot-4{
         position:relative;
         left:5px;
+        
         text-align:center;
         font-size:9px;
 
@@ -164,7 +165,7 @@ async function generatePDF(participation, user, partenaire) {
     <span class="cot-1">
    <span class="pass">
       <p>Pass n°:${participation.id}<p>
-      <p>Valable jusq'au: 14 mars 2025</p>
+      <p>Valable jusqu'au: 14 mars 2025</p>
     </span>
     <span class="user">
       <p>${user.prenom}</p>
