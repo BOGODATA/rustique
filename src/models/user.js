@@ -20,7 +20,7 @@ const User = sequelize.define('User', {
     defaultValue: false
   },
   lienTicket: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     allowNull: true,
   },
   code: {
