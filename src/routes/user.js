@@ -57,6 +57,27 @@ function generateRandomCode(length) {
 
   return code;
 }
+router.put('/update-etat-false/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await User.findByPk(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Mettre l'état à false
+    user.valider = false;
+
+    await user.save();
+
+    res.status(200).json({ message: 'Etat updated to false successfully' });
+  } catch (error) {
+    console.error('Error during etat update to false:', error);
+    res.status(500).json({ error: 'Error during etat update to false' });
+  }
+});
 router.put('/update-etat/:id', async (req, res) => {
   const userId = req.params.id;
 
